@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="drag"></div>
+    <div style="position: absolute;left: 50%;top: 50%;">
+       
+        <div id="droppable" id="ui-widget-header">
+            <p>请放置在这里</p>
+            <input type="text" value="111"> <span class="del">x</span>
+          </div>
+    </div>
+
+</body>
+
+</html>
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="https://www.jq22.com/jquery/jquery-ui-1.11.0.js"></script>
+<script src="index.js"></script>
+<script>
+    $(function () {
+        var list = [{
+            'name': '111u',
+            'child': [
+                { 'name': '111-111' ,'checked':false,'id':'name-li-name111'}, { 'name': '111-222' ,'checked':true,'id':'name-li-name222'}, { 'name': '111-333','checked':false,'id':'name-li-name333' }]
+        }, {
+            'name': '222',
+            'child': [
+                { 'name': '222-111','checked':true,'id':'name-li-name444' }, { 'name': '222-222','checked':true,'id':'name-li-name555' }, { 'name': '222-333' ,'checked':true,'id':'name-li-name666'}]
+        }]
+
+        new DragTree(list,'#drag',true,true)
+    })
+</script>
